@@ -8,7 +8,7 @@ WORKDIR /usr/src/app
 COPY Pipfile ./
 COPY Pipfile.lock ./
 
-RUN pipenv install
+RUN pipenv install --deploy
 
 COPY . .
 
