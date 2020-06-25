@@ -5,11 +5,11 @@ RUN pip install pipenv
 
 WORKDIR /usr/src/app
 
-COPY pipfile ./
-COPY pipfile.lock ./
+COPY Pipfile ./
+COPY Pipfile.lock ./
 
-RUN pipenv install --deploy
+RUN pipenv install --deploy --ignore-pipfile
 
 COPY . .
 
-CMD [ "python", "./bot.py" ]
+CMD [ "pipenv", "run", "python", "./bot.py" ]
